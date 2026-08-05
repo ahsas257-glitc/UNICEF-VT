@@ -5,6 +5,7 @@ Deploy: push this folder to GitHub → share on Streamlit Community Cloud,
 with 'streamlit_app.py' as the main file.
 """
 from pathlib import Path
+import base64
 import streamlit as st
 import streamlit.components.v1 as components
 
@@ -37,4 +38,7 @@ st.markdown(
 # ---- load and render the dashboard ----
 html_path = Path(__file__).parent / "dashboard.html"
 html = html_path.read_text(encoding="utf-8")
+logo_path = Path(__file__).parent / "assets" / "ppc-logo.png"
+logo_data = base64.b64encode(logo_path.read_bytes()).decode("ascii")
+html = html.replace("{{PPC_LOGO_DATA_URI}}", f"data:image/png;base64,{logo_data}")
 components.html(html, height=DASHBOARD_HEIGHT, scrolling=True)
