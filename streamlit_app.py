@@ -4,6 +4,7 @@ Embeds the self-contained HTML dashboard (latest data baked into dashboard.html)
 Deploy: push this folder to GitHub → share on Streamlit Community Cloud,
 with 'streamlit_app.py' as the main file.
 """
+import base64
 from pathlib import Path
 import streamlit as st
 import streamlit.components.v1 as components
