@@ -38,4 +38,20 @@ st.markdown(
 # ---- load and render the dashboard ----
 html_path = Path(__file__).parent / "dashboard.html"
 html = html_path.read_text(encoding="utf-8")
+
+logo_path = Path(__file__).parent / "assets" / "ppc-logo.png"
+logo_data = base64.b64encode(logo_path.read_bytes()).decode("ascii")
+
+html = html.replace(
+    "assets/ppc-logo.png",
+    f"data:image/png;base64,{logo_data}",
+)
+
+components.html(
+    html,
+    height=DASHBOARD_HEIGHT,
+    scrolling=True,
+)
+html_path = Path(__file__).parent / "dashboard.html"
+html = html_path.read_text(encoding="utf-8")
 components.html(html, height=DASHBOARD_HEIGHT, scrolling=True)
