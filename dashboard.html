@@ -148,7 +148,97 @@ table.sc tr:nth-child(even) td{background:#f7f9fc}
 footer{margin-top:26px;font-size:11.5px;color:var(--grey);line-height:1.7;background:#fff;border:1px solid var(--line);border-radius:12px;padding:16px 18px}
 footer b{color:var(--ink)}
 @media(max-width:900px){.kpis{grid-template-columns:1fr 1fr}.grid{grid-template-columns:1fr}.card.full{grid-column:auto}}
+@media (max-width: 1200px) {
+    .header-row {
+        grid-template-columns: 96px minmax(0, 1fr);
+        gap: 16px;
+    }
 
+    .brand-logo {
+        width: 92px;
+        height: 76px;
+    }
+
+    .badge {
+        grid-column: 1 / 3;
+        grid-row: 2;
+        justify-self: end;
+        margin-top: -10px;
+        font-size: 11px;
+        padding: 7px 11px;
+    }
+
+    header h1 {
+        font-size: clamp(15px, 2.3vw, 20px);
+    }
+}
+
+@media (max-width: 720px) {
+    header {
+        padding: 12px 0;
+    }
+
+    .header-row {
+        grid-template-columns: 76px minmax(0, 1fr);
+        gap: 12px;
+        min-height: 0;
+    }
+
+    .title-copy {
+        text-align: left;
+    }
+
+    header h1 {
+        font-size: clamp(13px, 2.6vw, 18px);
+    }
+
+    header p {
+        font-size: 11.5px;
+        line-height: 1.45;
+    }
+
+    .brand-logo {
+        width: 74px;
+        height: 68px;
+    }
+
+    .badge {
+        grid-column: 1 / 3;
+        width: max-content;
+        max-width: 100%;
+        justify-self: end;
+        flex-wrap: wrap;
+        margin-top: -4px;
+        padding: 7px 11px;
+        font-size: 10.5px;
+    }
+}
+
+@media (max-width: 520px) {
+    .header-row {
+        grid-template-columns: 1fr;
+    }
+
+    .logo-shell {
+        grid-column: 1;
+        grid-row: 1;
+    }
+
+    .title-copy {
+        grid-column: 1;
+        grid-row: 2;
+        text-align: center;
+    }
+
+    .badge {
+        grid-column: 1;
+        grid-row: 3;
+    }
+
+    header h1 {
+        font-size: 12px;
+    }
+}
 .theme{border-left:3px solid var(--line);padding:8px 12px;margin:10px 0;background:#fafbfd;border-radius:0 8px 8px 0}
 .theme.gd{border-left-color:var(--green)} .theme.cn{border-left-color:var(--amber)}
 .theme .tt{font-weight:700;font-size:13px;color:var(--ink)}
@@ -168,7 +258,7 @@ ul.keyfind li:before{content:"";position:absolute;left:2px;top:12px;width:7px;he
 .srow .sname{flex:0 0 200px;font-weight:700;font-size:12.5px;color:var(--navy)}
 .srow .sfind{flex:1;font-size:12.5px;color:#42506a}
 .srow .stone{flex:0 0 74px;text-align:center}
-
+<img class="brand-logo" src="assets/ppc-logo.png" alt="PPC logo">
 
 </style></head>
 <body>
@@ -178,7 +268,38 @@ ul.keyfind li:before{content:"";position:absolute;left:2px;top:12px;width:7px;he
 <div class="badge">Data extract: 24 Aug 2026 · Prepared by PPC</div>
 </div></header>
 <div class="wrap">
+<header>
+    <div class="wrap">
+        <div class="header-row">
 
+            <!-- بخش اول: لوگو در سمت چپ -->
+            <div class="logo-shell">
+                <img
+                    class="brand-logo"
+                    src="assets/ppc-logo.png"
+                    alt="PPC logo"
+                >
+            </div>
+
+            <!-- بخش دوم: عنوان در وسط -->
+            <div class="title-copy">
+                <h1>UNICEF Vocational Training — Monitoring Dashboard</h1>
+                <p>VT Project · Third-Party Monitoring · Afghanistan</p>
+            </div>
+
+            <!-- بخش سوم: تاریخ در سمت راست -->
+            <div
+                class="badge"
+                aria-label="Dashboard publication details"
+            >
+                <span>Data extract: 3 Aug 2026</span>
+                <span class="badge-dot" aria-hidden="true"></span>
+                <span>Prepared by PPC</span>
+            </div>
+
+        </div>
+    </div>
+</header>
 <div class="filters">
 <div class="fitem"><label>Region</label><select id="fRegion"></select></div>
 <div class="fitem"><label>Province</label><select id="fProvince"></select></div>
