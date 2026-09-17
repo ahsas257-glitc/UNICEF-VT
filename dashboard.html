@@ -10,11 +10,11 @@ body{font-family:'Segoe UI',Roboto,Helvetica,Arial,sans-serif;background:var(--b
 .wrap{max-width:1320px;margin:0 auto;padding:0 18px 60px}
 header{position:relative;overflow:hidden;min-height:180px;background:linear-gradient(105deg,#4058ad 0%,#3978bd 54%,#55b3df 100%);color:#fff}
 header::after{content:"";position:absolute;inset:0;pointer-events:none;background:radial-gradient(circle at 86% 18%,rgba(255,255,255,.13),transparent 25%)}
-header .header-inner{position:relative;z-index:1;display:grid;grid-template-columns:300px minmax(0,1fr) 300px;align-items:center;gap:24px;width:100%;min-height:180px;padding:0 26px 0 42px}
+header .header-inner{position:relative;z-index:1;display:grid;grid-template-columns:minmax(120px,.5fr) minmax(0,2.6fr) max-content;align-items:center;gap:clamp(12px,1.25vw,24px);width:100%;min-height:180px;padding:0 clamp(20px,2.2vw,42px)}
 .logo-shell{display:flex;align-items:center;justify-content:flex-start}
 .brand-logo{display:block;width:138px;height:112px;object-fit:contain;filter:drop-shadow(0 5px 10px rgba(17,45,91,.22))}
 .title-copy{min-width:0;text-align:center}
-header h1{font-size:clamp(25px,1.7vw,32px);font-weight:750;line-height:1.2;letter-spacing:.1px;white-space:nowrap}
+header h1{font-size:clamp(22px,1.7vw,32px);font-weight:750;line-height:1.2;letter-spacing:.1px;white-space:nowrap}
 header p{margin-top:11px;font-size:19px;line-height:1.3;opacity:.92}
 .badge{display:flex;align-items:center;justify-self:end;gap:11px;padding:13px 22px;white-space:nowrap;border:1px solid rgba(255,255,255,.38);border-radius:28px;background:rgba(255,255,255,.13);box-shadow:0 6px 18px rgba(26,56,120,.12);font-size:16px;font-weight:650}
 .badge-dot{width:6px;height:6px;flex:0 0 6px;border-radius:50%;background:rgba(255,255,255,.72)}
@@ -55,7 +55,8 @@ table.sc tr:nth-child(even) td{background:#f7f9fc}
 footer{margin-top:26px;font-size:11.5px;color:var(--grey);line-height:1.7;background:#fff;border:1px solid var(--line);border-radius:12px;padding:16px 18px}
 footer b{color:var(--ink)}
 @media(max-width:900px){.kpis{grid-template-columns:1fr 1fr}.grid{grid-template-columns:1fr}.card.full{grid-column:auto}}
-@media(max-width:1200px){header .header-inner{grid-template-columns:120px minmax(0,1fr);gap:16px;padding:18px 26px}.brand-logo{width:110px;height:90px}.badge{grid-column:1/3;justify-self:end;margin-top:-14px;padding:9px 15px;font-size:13px}header h1{font-size:clamp(18px,2.5vw,28px)}header p{font-size:16px}}
+@media(max-width:1550px){header .header-inner{grid-template-columns:120px minmax(0,1fr) max-content}.brand-logo{width:112px;height:92px}header h1{font-size:clamp(19px,1.55vw,24px);white-space:normal;text-wrap:balance}header p{font-size:clamp(13px,1.15vw,17px)}.badge{gap:8px;padding:10px 16px;font-size:13px}}
+@media(max-width:1100px){header .header-inner{grid-template-columns:110px minmax(0,1fr);gap:14px;padding:16px 24px}.brand-logo{width:100px;height:82px}.badge{grid-column:1/3;justify-self:end;margin-top:-10px;padding:8px 14px;font-size:12px}header h1{font-size:clamp(18px,2.5vw,24px)}header p{font-size:14px}}
 @media(max-width:700px){header,header .header-inner{min-height:0}header .header-inner{grid-template-columns:78px minmax(0,1fr);gap:12px;padding:14px 18px}.brand-logo{width:74px;height:68px}.title-copy{text-align:left}header h1{font-size:clamp(14px,3.2vw,20px);white-space:normal}header p{margin-top:6px;font-size:12px}.badge{grid-column:1/3;margin-top:-2px;padding:7px 11px;font-size:11px}}
 @media(max-width:430px){header .header-inner{grid-template-columns:1fr;justify-items:center}.title-copy{text-align:center}.badge{grid-column:1;justify-self:center;max-width:100%;white-space:normal}}
 
@@ -86,7 +87,7 @@ ul.keyfind li:before{content:"";position:absolute;left:2px;top:12px;width:7px;he
 <div class="header-inner">
 <div class="logo-shell"><img class="brand-logo" src="assets/ppc-logo.png" alt="PPC logo"></div>
 <div class="title-copy"><h1>UNICEF Vocational Training — Monitoring Dashboard</h1>
-<p>VT Project · Third-Party Monitoring · Afghanistan</p></div>
+<p>ADB-funded VT Project · Third-Party Monitoring · Afghanistan</p></div>
 <div class="badge" aria-label="Dashboard publication details"><span>Data extract: 15 Sep 2026</span><span class="badge-dot" aria-hidden="true"></span><span>Prepared by PPC</span></div>
 </div>
 </header>

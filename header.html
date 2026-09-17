@@ -41,12 +41,12 @@
       position: relative;
       z-index: 1;
       display: grid;
-      grid-template-columns: 300px minmax(0, 1fr) 300px;
+      grid-template-columns: minmax(120px, 0.5fr) minmax(0, 2.6fr) max-content;
       align-items: center;
-      gap: 24px;
+      gap: clamp(12px, 1.25vw, 24px);
       width: 100%;
       min-height: 180px;
-      padding: 0 26px 0 42px;
+      padding: 0 clamp(20px, 2.2vw, 42px);
     }
 
     .logo-shell {
@@ -69,7 +69,7 @@
     }
 
     .title-copy h1 {
-      font-size: clamp(25px, 1.7vw, 32px);
+      font-size: clamp(22px, 1.7vw, 32px);
       font-weight: 750;
       line-height: 1.2;
       letter-spacing: 0.1px;
@@ -106,32 +106,59 @@
       background: rgba(255, 255, 255, 0.72);
     }
 
-    @media (max-width: 1200px) {
+    @media (max-width: 1550px) {
       .header-inner {
-        grid-template-columns: 120px minmax(0, 1fr);
-        gap: 16px;
-        padding: 18px 26px;
+        grid-template-columns: 120px minmax(0, 1fr) max-content;
       }
 
       .brand-logo {
-        width: 110px;
-        height: 90px;
+        width: 112px;
+        height: 92px;
+      }
+
+      .publication-badge {
+        gap: 8px;
+        padding: 10px 16px;
+        font-size: 13px;
+      }
+
+      .title-copy h1 {
+        font-size: clamp(19px, 1.55vw, 24px);
+        white-space: normal;
+        text-wrap: balance;
+      }
+
+      .title-copy p {
+        font-size: clamp(13px, 1.15vw, 17px);
+      }
+    }
+
+    @media (max-width: 1100px) {
+      .header-inner {
+        grid-template-columns: 110px minmax(0, 1fr);
+        gap: 14px;
+        padding: 16px 24px;
+      }
+
+      .brand-logo {
+        width: 100px;
+        height: 82px;
       }
 
       .publication-badge {
         grid-column: 1 / 3;
         justify-self: end;
-        margin-top: -14px;
-        padding: 9px 15px;
-        font-size: 13px;
+        margin-top: -10px;
+        padding: 8px 14px;
+        font-size: 12px;
       }
 
       .title-copy h1 {
-        font-size: clamp(18px, 2.5vw, 28px);
+        font-size: clamp(18px, 2.5vw, 24px);
       }
 
       .title-copy p {
-        font-size: 16px;
+        font-size: 14px;
       }
     }
 
@@ -206,7 +233,7 @@
       </div>
 
       <div class="publication-badge" aria-label="Dashboard publication details">
-        <span>Data extract: 24 Aug 2026</span>
+        <span>Data extract: 15 Sep 2026</span>
         <span class="badge-dot" aria-hidden="true"></span>
         <span>Prepared by PPC</span>
       </div>
